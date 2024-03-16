@@ -1,0 +1,66 @@
+                                                       *diagnostic_level.nvim*
+
+This simple plugin is designed to allow a user to set the level that is
+displayed by the diagnostics in nvim. This includes the virtual_text, signs,
+and underlines.
+
+
+                                                              *set_diag_level*
+set_diag_level({level})
+
+    Set the level of diagnostics shown in the virtual text to {level}. The
+    value of {level} should be an integer between 1 and 4 where 1
+    corresponds to ERROR, 2 to WARN, 3 to INFO, and 4 to HINT. Or set to
+    a value of |vim.diagnostic.severity|. >
+
+        set_diag_level(1)
+
+<
+                                                                *set_diag_min*
+set_diag_min({level})
+
+    Set a minimum level for the virtual text. See |set_diag_level|.
+
+
+                                                              *set_sign_level*
+set_sign_level({level})
+
+    Set the level at which diagnostic signs are shown in the sign column.
+    See |set_diag_level|
+
+
+                                                                *set_sign_min*
+set_sign_min({level})
+
+    Set a minimum level for the diagnostic signs in the sign column. See
+    |set_diag_level|.
+
+
+                                                              *set_underline_level*
+set_underline_level({level})
+
+    Set the level at which diagnostic underlines are used. See |set_diag_level|
+
+
+                                                                *set_underline_min*
+set_underline_min({level})
+
+    Set a minimum level for the diagnostic underlines are used.
+    |set_diag_level|.
+
+
+                                                           *set_diag_prefixes*
+set_diag_prefixes({prefixes})
+
+    Set prefixes for each of the diagnostic levels that will be prefixed
+    to virtual text messages at that level. The {prefixes} value should be
+    a table with keys {e}, {w}, {i}, and/or {h}. Here the value set for
+    {e} will be the prefix used for ERROR level diagnostic messages, {w}
+    for WARN, {i} for INFO, and {h} for HINT. Defaults are "E: ", "W: ",
+    "I: ", and "H: " respectively. To set the ERROR message prefix to
+    "ERR: " and the WARN message prefix to "WARN: " >
+
+        set_diag_prefixes({e = "ERR: ", w = "WARN: ", ...})
+<
+
+ vim:tw=78:ts=8:ft=help:norl:
