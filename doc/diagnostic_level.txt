@@ -49,18 +49,4 @@ set_underline_min({level})
     |set_diag_level|.
 
 
-                                                           *set_diag_prefixes*
-set_diag_prefixes({prefixes})
-
-    Set prefixes for each of the diagnostic levels that will be prefixed
-    to virtual text messages at that level. The {prefixes} value should be
-    a table with keys {e}, {w}, {i}, and/or {h}. Here the value set for
-    {e} will be the prefix used for ERROR level diagnostic messages, {w}
-    for WARN, {i} for INFO, and {h} for HINT. Defaults are "E: ", "W: ",
-    "I: ", and "H: " respectively. To set the ERROR message prefix to
-    "ERR: " and the WARN message prefix to "WARN: " >
-
-        set_diag_prefixes({e = "ERR: ", w = "WARN: ", ...})
-<
-
  vim:tw=78:ts=8:ft=help:norl:
